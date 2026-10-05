@@ -77,5 +77,3 @@ STM32G474-MCU-Project/
 ├── STM32G474.ioc                # STM32CubeMX 硬體配置專案原始檔
 ├── LICENSE                      # 開放原始碼授權協議
 └── README.md                    # 專案說明文件
-
-![image](739e3d12f1fb1d1c97e6d4abe9c0ef38.gif_
