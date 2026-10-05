@@ -1,3 +1,4 @@
+```text
 STM32G474-MCU-Project/
 ├── .github/                     # GitHub 工作流與 CI/CD 設定
 │   └── workflows/
@@ -64,7 +65,7 @@ STM32G474-MCU-Project/
 │   ├── Inc/
 │   │   ├── app_main.h           # 應用層主要框架入口
 │   │   ├── app_power_control.h  # 數位電源 / HRTIM PWM 控制演算法
-│   │   ├── app_display.h        # 畫面UI與顯示邏輯
+│   │   ├── app_display.h        # 畫面 UI 與顯示邏輯
 │   │   └── app_cli.h            # 命令列交互介面 (Command Line Interface)
 │   └── Src/
 │       ├── app_main.c           # 應用層主流程 (可由 main.c 呼叫)
@@ -103,3 +104,4 @@ STM32G474-MCU-Project/
 ├── STM32G474.ioc                # STM32CubeMX 硬體配置專案原始檔
 ├── LICENSE                      # 開放原始碼授權協議 (如 MIT)
 └── README.md                    # 專案主要說明文件
+```
