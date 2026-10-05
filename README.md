@@ -1,4 +1,3 @@
-![image](739e3d12f1fb1d1c97e6d4abe9c0ef38.gif_
 ```text
 STM32G474-MCU-Project/
 ├── .github/                     # GitHub 工作流與 CI/CD 設定
