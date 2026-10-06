@@ -1,0 +1,276 @@
+13:53:31 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:18:2: warning: data definition has no type or storage class
+   18 |  MX_GPIO_Init();
+      |  ^~~~~~~~~~~~
+../Core/Src/main.c:18:2: error: type defaults to 'int' in declaration of 'MX_GPIO_Init' [-Wimplicit-int]
+../Core/Src/main.c:19:2: warning: data definition has no type or storage class
+   19 |  MX_LPUART1__Init();
+      |  ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:19:2: error: type defaults to 'int' in declaration of 'MX_LPUART1__Init' [-Wimplicit-int]
+../Core/Src/main.c:20:2: error: unknown type name 'uint8_t'
+   20 |  uint8_t startupMessage[] ="HELLO WORLD\r\n";
+      |  ^~~~~~~
+../Core/Src/main.c:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; this is probably fixable by adding '#include <stdint.h>'
+  +++ |+#include <stdint.h>
+    1 | /* USER CODE BEGIN Header */
+../Core/Src/main.c:20:28: error: array of inappropriate type initialized from string constant
+   20 |  uint8_t startupMessage[] ="HELLO WORLD\r\n";
+      |                            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:21:2: error: expected identifier or '(' before 'if'
+   21 |  if (HAL_UART_Transmit(&hlpuart1, startupMessage,sizeof(startupMessage) - 1U,100U) != HAL_OK)
+      |  ^~
+../Core/Src/main.c:58:13: error: conflicting types for 'MX_GPIO_Init'; have 'void(void)'
+   58 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:18:2: note: previous declaration of 'MX_GPIO_Init' with type 'int()'
+   18 |  MX_GPIO_Init();
+      |  ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+13:54:08 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:95:3: error: implicit declaration of function 'MX_LPUART1__Init'; did you mean 'MX_LPUART1_UART_Init'? [-Wimplicit-function-declaration]
+   95 |   MX_LPUART1__Init();
+      |   ^~~~~~~~~~~~~~~~
+      |   MX_LPUART1_UART_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+13:54:39 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pro4.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\stm32\project\pj4\pro4\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pro4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pro4.elf
+ 
+arm-none-eabi-size  pro4.elf 
+arm-none-eabi-objdump -h -S pro4.elf  > "pro4.list"
+   text	   data	    bss	    dec	    hex	filename
+  11888	     12	   1716	  13616	   3530	pro4.elf
+Finished building: default.size.stdout
+ 
+Finished building: pro4.list
+ 
+14:21:54 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'ExecuteCommand':
+../Core/Src/main.c:62:5: error: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   62 | if (strcmp(command, "GREEN ON") == 0)
+      |     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strcmp'
+   21 | #include "main.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c: In function 'ProcessReceivedByte':
+../Core/Src/main.c:77:1: error: 'lineBuffer' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      | ^~~~~~~~~~
+../Core/Src/main.c:77:1: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:77:12: error: 'lineLength' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      |            ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:97:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   97 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+../Core/Src/main.c:97:17: warning: 'lineLength' defined but not used [-Wunused-variable]
+   97 | static uint09_t lineLength = 0U;
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:96:13: warning: 'lineBuffer' defined but not used [-Wunused-variable]
+   96 | static char lineBuffer[32];
+      |             ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:22:03 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'ExecuteCommand':
+../Core/Src/main.c:62:5: error: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   62 | if (strcmp(command, "GREEN ON") == 0)
+      |     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strcmp'
+   21 | #include "main.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c: In function 'ProcessReceivedByte':
+../Core/Src/main.c:77:1: error: 'lineBuffer' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      | ^~~~~~~~~~
+../Core/Src/main.c:77:1: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:77:12: error: 'lineLength' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      |            ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:97:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   97 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+../Core/Src/main.c:97:17: warning: 'lineLength' defined but not used [-Wunused-variable]
+   97 | static uint09_t lineLength = 0U;
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:96:13: warning: 'lineBuffer' defined but not used [-Wunused-variable]
+   96 | static char lineBuffer[32];
+      |             ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:22:06 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'ExecuteCommand':
+../Core/Src/main.c:62:5: error: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   62 | if (strcmp(command, "GREEN ON") == 0)
+      |     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strcmp'
+   21 | #include "main.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c: In function 'ProcessReceivedByte':
+../Core/Src/main.c:77:1: error: 'lineBuffer' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      | ^~~~~~~~~~
+../Core/Src/main.c:77:1: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:77:12: error: 'lineLength' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      |            ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:97:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   97 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+../Core/Src/main.c:97:17: warning: 'lineLength' defined but not used [-Wunused-variable]
+   97 | static uint09_t lineLength = 0U;
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:96:13: warning: 'lineBuffer' defined but not used [-Wunused-variable]
+   96 | static char lineBuffer[32];
+      |             ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:22:33 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'ExecuteCommand':
+../Core/Src/main.c:62:5: error: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   62 | if (strcmp(command, "GREEN ON") == 0)
+      |     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strcmp'
+   21 | #include "main.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c: In function 'ProcessReceivedByte':
+../Core/Src/main.c:77:1: error: 'lineBuffer' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      | ^~~~~~~~~~
+../Core/Src/main.c:77:1: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:77:12: error: 'lineLength' undeclared (first use in this function)
+   77 | lineBuffer[lineLength] = '\0';
+      |            ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:97:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   97 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+../Core/Src/main.c:97:17: warning: 'lineLength' defined but not used [-Wunused-variable]
+   97 | static uint09_t lineLength = 0U;
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:96:13: warning: 'lineBuffer' defined but not used [-Wunused-variable]
+   96 | static char lineBuffer[32];
+      |             ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:23:25 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pro4.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\stm32\project\pj4\pro4\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pro4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pro4.elf
+ 
+arm-none-eabi-size  pro4.elf 
+arm-none-eabi-objdump -h -S pro4.elf  > "pro4.list"
+   text	   data	    bss	    dec	    hex	filename
+  11888	     12	   1716	  13616	   3530	pro4.elf
+Finished building: default.size.stdout
+ 
+Finished building: pro4.list
+ 
+14:27:22 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:50:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   50 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:31:59 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:50:8: error: unknown type name 'uint9_t'; did you mean 'uint8_t'?
+   50 | static uint9_t lineLength = 0U;
+      |        ^~~~~~~
+      |        uint8_t
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:32:19 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:50:8: error: unknown type name 'uint09_t'; did you mean 'uint64_t'?
+   50 | static uint09_t lineLength = 0U;
+      |        ^~~~~~~~
+      |        uint64_t
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:33:14 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pro4.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\stm32\project\pj4\pro4\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pro4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pro4.elf
+ 
+arm-none-eabi-size  pro4.elf 
+arm-none-eabi-objdump -h -S pro4.elf  > "pro4.list"
+   text	   data	    bss	    dec	    hex	filename
+  12636	     12	   1756	  14404	   3844	pro4.elf
+Finished building: default.size.stdout
+ 
+Finished building: pro4.list
+ 
+14:41:03 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:95:13: error: redefinition of 'ProcessReceivedByte'
+   95 | static void ProcessReceivedByte(uint8_t data)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:13: note: previous definition of 'ProcessReceivedByte' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+   81 | static void ProcessReceivedByte(uint8_t data)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:13: warning: 'ProcessReceivedByte' defined but not used [-Wunused-function]
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:41:15 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:95:13: error: redefinition of 'ProcessReceivedByte'
+   95 | static void ProcessReceivedByte(uint8_t data)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:13: note: previous definition of 'ProcessReceivedByte' with type 'void(uint8_t)' {aka 'void(unsigned char)'}
+   81 | static void ProcessReceivedByte(uint8_t data)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:13: warning: 'ProcessReceivedByte' defined but not used [-Wunused-function]
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+14:41:30 **** Incremental Build of configuration Debug for project pro4 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pro4.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\stm32\project\pj4\pro4\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pro4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pro4.elf
+ 
+arm-none-eabi-size  pro4.elf 
+arm-none-eabi-objdump -h -S pro4.elf  > "pro4.list"
+   text	   data	    bss	    dec	    hex	filename
+  12636	     12	   1756	  14404	   3844	pro4.elf
+Finished building: default.size.stdout
+ 
+Finished building: pro4.list
+ 
